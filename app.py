@@ -280,14 +280,17 @@ if "result" in st.session_state:
 
     elif page == "結語與感謝":
         st.markdown("""
-        ## 🎓 結語
+        ## 結語
         感謝您使用本系統！
 
         本專案旨在透過修辭與心理構面分析技術，視覺化展示詐騙語句背後的操作策略與心理誘因，
         幫助使用者提升對數位語言操弄的辨識力。
 
-        - 製作團隊：修辭與人文數位應用專案
-        - 技術基礎：OpenAI GPT + Plotly + Pyvis + Streamlit
+        - 製作團隊：數位人文與AI（Ronald & Grace)
+        - 理論基礎：修辭學（Aristotle/亞里斯多德）＋ 心理學（Cialdini's six principles of persuasion）＋語言學
+        - 技術基礎：OpenAI API + Plotly + Pyvis + Streamlit 
+        - 指導老師：創新國際學院（ＩＣＩ）呂欣澤 助理教授
 
         如有建議歡迎聯絡我們！
+        聯絡資訊：110501071@g.nccu.edu.tw
         """)
