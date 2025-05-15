@@ -278,7 +278,7 @@ if "result" in st.session_state:
             html_content = f.read()
         components.html(html_content, height=650, scrolling=True)
 
-    elif page == "結語與感謝":
+    elif page == "結語":
         st.markdown("""
         ## 結語
         感謝您使用本系統！
