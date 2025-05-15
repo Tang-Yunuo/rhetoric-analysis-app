@@ -233,7 +233,7 @@ def generate_network_html(result):
 st.set_page_config(layout="wide")
 st.title("詐騙語言分析系統（修辭 × 心理模型）")
 
-page = st.sidebar.radio("選擇頁面：", ["輸入分析語句", "修辭圖表分析", "3D 空間展示", "心理強度分析圖", "互動式網絡圖", "結語與感謝"])
+page = st.sidebar.radio("選擇頁面：", ["輸入分析語句", "修辭圖表分析", "3D 空間展示", "心理強度分析圖", "互動式網絡圖", "結語"])
 
 if page == "輸入分析語句":
     user_input = st.text_area("請輸入欲分析的語句：", height=200)
