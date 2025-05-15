@@ -236,6 +236,7 @@ st.title("詐騙語言分析系統（修辭 × 心理模型）")
 page = st.sidebar.radio("選擇頁面：", ["輸入分析語句", "修辭圖表分析", "3D 空間展示", "心理強度分析圖", "互動式網絡圖", "結語"])
 
 if page == "輸入分析語句":
+    example_text = "您的帳戶有異常交易，請立即登入核實，否則將凍結資金。"
     user_input = st.text_area("請輸入欲分析的語句：", height=200)
     if st.button("分析語句") and user_input:
         st.session_state.result = analyze_full(user_input)
