@@ -83,7 +83,7 @@ def analyze_full(text_input):
             {"role": "user", "content": prompt}]
     )
 
-    raw = response['choices'][0]['message']['content']
+    raw = response.choices[0].message.content
     return json.loads(raw)
 
 # --- 3. 修辭三角區域圖函式 ---
