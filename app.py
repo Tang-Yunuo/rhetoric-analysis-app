@@ -286,7 +286,7 @@ if "result" in st.session_state:
         本專案旨在透過修辭與心理構面分析技術，視覺化展示詐騙語句背後的操作策略與心理誘因，
         幫助使用者提升對數位語言操弄的辨識力。
 
-        - 製作團隊：數位人文與AI（Ronald & Grace)
+        - 製作團隊：數位人文與AI課程（Ronald & Grace)
         - 理論基礎：修辭學（Aristotle/亞里斯多德）＋ 心理學（Cialdini's six principles of persuasion）＋語言學
         - 技術基礎：OpenAI API + Plotly + Pyvis + Streamlit 
         - 指導老師：創新國際學院（ＩＣＩ）呂欣澤 助理教授
