@@ -8,7 +8,6 @@ Original file is located at
 """
 
 import streamlit as st
-import openai
 import json
 import os
 import plotly.graph_objects as go
@@ -21,8 +20,10 @@ import networkx as nx
 import tempfile
 
 # --- 1. API 金鑰讀取 ---
-openai.api_key = st.secrets["openai_api_key"] if "openai_api_key" in st.secrets else os.getenv("OPENAI_API_KEY")
+import openai
+from openai import OpenAI
 
+client = OpenAI(api_key=st.secrets["openai_api_key"])
 # --- 2. 核心分析函式 ---
 def analyze_full(text_input):
     prompt = f"""
