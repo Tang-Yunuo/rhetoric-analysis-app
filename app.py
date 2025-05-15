@@ -211,7 +211,7 @@ def generate_network_html(result):
                 if principle not in G:
                     G.add_node(principle, label=principle, color="#facc15", shape="box")
                 G.add_edge(seg_node, principle, title=f"說服策略：{principle}")
-    net = Network(height="600px", width="100%", bgcolor="#ffffff", font_color="black", cdn_resources='remote')
+    net = Network(height="600px", width="100%", bgcolor="#ffffff", font_color="black", font_size=24, cdn_resources='remote')
     net.from_nx(G)
     net.repulsion(node_distance=300, spring_length=200)
     tmp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".html", mode="w", encoding="utf-8")
