@@ -214,15 +214,15 @@ def generate_network_html(result):
     net = Network(height="600px", width="100%", bgcolor="#ffffff", font_color="black", cdn_resources='remote')
     net.from_nx(G)
     net.repulsion(node_distance=300, spring_length=200)
-    net.set_options("""
-    var options = {
-      nodes: {
-        font: {
-          size: 24
+    net.set_options('''
+    {
+      "nodes": {
+        "font": {
+          "size": 24
+        }
+      }
     }
-  }
-}
-""")
+    ''')
     
     tmp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".html", mode="w", encoding="utf-8")
     net.write_html(tmp_file.name)
