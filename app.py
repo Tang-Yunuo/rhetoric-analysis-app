@@ -134,7 +134,7 @@ def plot_bubble_chart(result):
             total = sum([s['rhetoric']['ethos'], s['rhetoric']['pathos'], s['rhetoric']['logos']])
             if total == 0: continue
             data.append({
-                "text": s.get("sentence", "無內容"),
+                "text": s.get("text"),
                 "Ethos": s['rhetoric']['ethos'] / total,
                 "Pathos": s['rhetoric']['pathos'] / total,
                 "Logos": s['rhetoric']['logos'] / total,
@@ -156,7 +156,7 @@ def plot_rhetoric_3d(result):
         "Pathos": s['rhetoric']['pathos'],
         "Logos": s['rhetoric']['logos'],
         "emotion_strength": np.mean([s['psychology']['社會信任'], s['psychology']['情緒反應'], s['psychology']['認知判斷']]),
-        "text": s.get("sentence", "無內容")
+        "text": s.get("text")
     } for s in result])
     fig = go.Figure(data=[go.Scatter3d(x=df_3d["Ethos"], y=df_3d["Pathos"], z=df_3d["Logos"], text=df_3d["text"], mode='markers+text', marker=dict(size=df_3d["emotion_strength"] * 30, color=df_3d["emotion_strength"], colorscale='Viridis', opacity=0.8, colorbar=dict(title="心理強度")), hovertemplate="<b>語句</b>: %{text}<br>Ethos: %{x:.2f}<br>Pathos: %{y:.2f}<br>Logos: %{z:.2f}<extra></extra>")])
     fig.update_layout(title="詐騙語句修辭構面 3D 空間圖", scene=dict(xaxis=dict(title='Ethos', range=[0, 1]), yaxis=dict(title='Pathos', range=[0, 1]), zaxis=dict(title='Logos', range=[0, 1])), margin=dict(l=0, r=0, b=0, t=40))
@@ -169,7 +169,7 @@ def plot_psychology_3d(result):
         "情緒反應": s['psychology']['情緒反應'],
         "認知判斷": s['psychology']['認知判斷'],
         "rhetoric_strength": np.mean([s['rhetoric']['ethos'], s['rhetoric']['pathos'], s['rhetoric']['logos']]),
-        "text": s.get("sentence", "無內容")
+        "text": s.get("text")
     } for s in result])
     fig = go.Figure(data=[go.Scatter3d(x=df_psych_3d["社會信任"], y=df_psych_3d["情緒反應"], z=df_psych_3d["認知判斷"], text=df_psych_3d["text"], mode='markers+text', marker=dict(size=df_psych_3d["rhetoric_strength"] * 30, color=df_psych_3d["rhetoric_strength"], colorscale='Plasma', opacity=0.8, colorbar=dict(title="修辭強度")), hovertemplate="<b>語句</b>: %{text}<br>社會信任: %{x:.2f}<br>情緒反應: %{y:.2f}<br>認知判斷: %{z:.2f}<extra></extra>")])
     fig.update_layout(title="詐騙語句心理構面 3D 空間圖", scene=dict(xaxis=dict(title='社會信任', range=[0, 1]), yaxis=dict(title='情緒反應', range=[0, 1]), zaxis=dict(title='認知判斷', range=[0, 1])), margin=dict(l=0, r=0, b=0, t=40))
