@@ -22,9 +22,9 @@ import tempfile
 # --- 1. API 金鑰讀取 ---
 import openai
 from openai import OpenAI
-
 client = OpenAI(api_key=st.secrets["openai_api_key"])
 # --- 2. 核心分析函式 ---
+
 def analyze_full(text_input):
     prompt = f"""
     你是一位修辭與心理語言學分析專家，請依據下列說明分析詐騙語句的心理與修辭策略，並以 JSON 陣列格式輸出，不要補充說明。
@@ -77,9 +77,10 @@ def analyze_full(text_input):
 {text_input}
     """
 
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": prompt}]
+        messages=[
+            {"role": "user", "content": prompt}]
     )
 
     raw = response['choices'][0]['message']['content']
