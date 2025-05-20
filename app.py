@@ -78,7 +78,7 @@ def analyze_full(text_input):
     """
 
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4",
         messages=[
             {"role": "user", "content": prompt}]
     )
