@@ -65,7 +65,7 @@ def analyze_full(text_input):
 [
   {{
     "text": "（原始語句）",
-    "rhetoric": {{"ethos(信譽)": 0.7, "pathos(情感)": 0.3, "logos(邏輯)": 0.2}},
+    "rhetoric": {{"ethos": 0.7, "pathos": 0.3, "logos": 0.2}},
     "psychology": {{"社會信任": 0.6, "情緒反應": 0.4, "認知判斷": 0.3}},
     "persuasion_principle": "Authority（權威)"
   }},
